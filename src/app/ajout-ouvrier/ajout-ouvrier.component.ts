@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { OuvrierService, Ouvrier } from './ouvrier.service';
-
+import { ServicesService, Services } from '../tables/services.service'
 @Component({
   selector: 'app-ajout-ouvrier',
   templateUrl: './ajout-ouvrier.component.html',
@@ -13,19 +13,21 @@ export class AjoutOuvrierComponent implements OnInit {
   success = false;
   ouvrier: any;
   ouvriers: Ouvrier[];
+  services:any;
+  servicess:Services[];
   messageForm = new FormGroup({
   username: new FormControl('', [Validators.required]),
-  Adresse: new FormControl('', [Validators.required]),
+  adresse: new FormControl('', [Validators.required]),
   tel: new FormControl('', [Validators.required]),
-  Typedouvrier: new FormControl('', [Validators.required]),
-  Service: new FormControl('', [Validators.required]),
+ type: new FormControl('', [Validators.required]),
+  services: new FormControl('', [Validators.required]),
 
   })
  
-  constructor(private service: OuvrierService,) { }
+  constructor(private service: OuvrierService,private serviceservice: ServicesService) { }
 
   ngOnInit() {
-  
+    this.Submit();
     }
     onSubmit() {
       
@@ -36,7 +38,12 @@ export class AjoutOuvrierComponent implements OnInit {
       }
   
       this.success = true;
-      this.service. addOuvrier(this.messageForm.value).subscribe(
+      let services = this.messageForm.value.services;
+    let niv = this.messageForm.value;
+    delete niv['services'];
+    console.log(niv);
+    console.log(services);
+      this.service. addOuvrier(niv, services).subscribe(
         data => {
           if (data) {
   
@@ -57,7 +64,11 @@ export class AjoutOuvrierComponent implements OnInit {
       )
      
     }
-  
+    Submit() {
+      this.serviceservice. getService().subscribe(data => {
+        this.servicess = data
+      })
+    }
     
 }
 

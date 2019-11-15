@@ -15,9 +15,9 @@ export class UserComponent implements OnInit {
   clients: Client[];
   messageForm = new FormGroup({
   username: new FormControl('', [Validators.required]),
-  Adresse: new FormControl('', [Validators.required]),
+  adresse: new FormControl('', [Validators.required]),
   tel: new FormControl('', [Validators.required]),
-  Service: new FormControl('', [Validators.required]),
+  services: new FormControl('', [Validators.required]),
 
   })
 

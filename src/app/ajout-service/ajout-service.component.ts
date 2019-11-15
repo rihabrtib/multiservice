@@ -3,11 +3,11 @@ import {ClientService, Client } from './client.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
-  selector: 'app-ajout-client',
-  templateUrl: './ajout-client.component.html',
-  styleUrls: ['./ajout-client.component.scss']
+  selector: 'app-ajout-service',
+  templateUrl: './ajout-service.component.html',
+  styleUrls: ['./ajout-service.component.scss']
 })
-export class AjoutClientComponent implements OnInit {
+export class AjoutServiceComponent implements OnInit {
 
   constructor(private service: ClientService) { }
   submitted = false;

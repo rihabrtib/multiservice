@@ -21,7 +21,8 @@
         z-index: 4;
 
         padding-bottom: 75px;
-
+        background-color: rgba(100, 148, 237, 0.534) ;
+        // background: linear-gradient(217deg, rgba(100,149,237,.8), rgba(255,0,0,0) 70.71%);
         .dropdown .dropdown-backdrop{
             display: none !important;
         }
@@ -37,6 +38,7 @@
         left: 0;
         background-size: cover;
         background-position: center center;
+       
     }
 
     .logo{
@@ -216,7 +218,7 @@
     }
 
     &:after{
-       @include icon-gradient($black-color-top, $black-color-bottom);
+     
        z-index: 3;
        opacity: 1;
     }
@@ -226,24 +228,6 @@
         opacity: .77;
     }
 
-    &[data-color="blue"]:after{
-        @include icon-gradient($new-dark-blue, $blue-color-bottom);
-    }
-    &[data-color="azure"]:after{
-        @include icon-gradient($new-blue, $azure-color-bottom);
-    }
-    &[data-color="green"]:after{
-        @include icon-gradient($new-green, $green-color-bottom);
-    }
-    &[data-color="orange"]:after{
-        @include icon-gradient($new-orange, $orange-color-bottom);
-    }
-    &[data-color="red"]:after{
-        @include icon-gradient($new-red, $red-color-bottom);
-    }
-    &[data-color="purple"]:after{
-        @include icon-gradient($new-purple, $purple-color-bottom);
-    }
 }
 
 

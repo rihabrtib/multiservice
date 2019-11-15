@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" formControlName="Adresse" class="form-control" placeholder="Email">
+                    <input type="email" formControlName="adresse" class="form-control" placeholder="Email">
                   </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="inputState">Type d'ouvrier</label>
-                    <select id="inputState" formControlName="Typedouvrier" class="form-control">
+                    <select id="inputState" formControlName="type" class="form-control">
                       <option selected>Choose...</option>
                       <option>Gérant</option>
                       <option>Electricien</option>
@@ -54,17 +54,14 @@
 
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="inputState">Service</label>
-                    <select id="inputState" formControlName="Service" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>Gérant</option>
-                      <option>Electricien</option>
-                      <option>Maçon</option>
-                      <option>Plombier</option>
-                      <option>Peintre</option>
-                    </select>
-                  </div>
+
+                  <label>Service</label>
+                  <select id="inputState" formControlName="services" class="form-control">
+                    <option selected>Choose...</option>
+                    <option [value]="services.id" *ngFor="let services of servicess">{{services.titre}}</option>
+
+                  </select>
+
                 </div>
               </div>
               <button type="submit" vclass="cta" class="btn btn-warning">Confirmer</button>

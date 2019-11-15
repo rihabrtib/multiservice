@@ -1,51 +1,95 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                          <table class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let row of tableData1.dataRows">
-                                        <td *ngFor="let cell of row">{{cell}}</td>
-                                    </tr>
-                                </tbody>
-                          </table>
-
-                    </div>
-                </div>
+      <div class="row">
+  
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+  
+              <p style="color: cornflowerblue; font-size: 27px;" class="category">Liste des Services</p>
             </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="header">
-                        <h4 class="title">Table on Plain Background</h4>
-                        <p class="category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let row of tableData2.dataRows">
-                                    <td *ngFor="let cell of row">{{cell}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="content">
+              <div class="table-full-width">
+  
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"
+                        class="td-actions text-left">Titre</th>
+                      <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"
+                        class="td-actions text-left">Description</th>
+                      <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"
+                        class="td-actions text-left">Price</th>
+                    
+  
+  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let services of servicess">
+  
+                      <td>{{services.titre}}</td>
+                      <td>{{services.decription}}</td>
+                      <td>{{services.price}}</td>
+                     
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
+                          <i class="fa fa-edit"></i>
+                        </button>
+                        <button type="button" rel="tooltip" title="Remove" (click)="Delete(ouvrier)"
+                          class="btn btn-danger btn-simple btn-xs">
+                          <i class="fa fa-times"></i>
+                        </button>
+                      </td>
+                    </tr>
+  
+                  </tbody>
+                </table>
+              </div>
+  
             </div>
+          </div>
         </div>
+  
+      </div>
+      <div class="row">
+  
+        <div class="col-md-3">
+          
+            
+  
+              <div class="divd"><a href="#/ajououvrier"><span>Ajouter Un Service</span></a></div>
+  
+           
+         
+        </div>
+        
+  
+  
+  
+  
+        
+  
+      </div>
+  
+    
     </div>
-</div>
+  
+  
+    </div>

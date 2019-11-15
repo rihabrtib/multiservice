@@ -20,12 +20,12 @@ export class Ouvrier {
 export class OuvrierService {
 
   constructor(private http: HttpClient) { }
-  Url1 = 'http://localhost:9000/ouvrier/addouvrier';
+  Url1 = 'http://localhost:9000/ouvrier/add';
  
  
 
-  addOuvrier(ouvrier: Ouvrier) {
-    return this.http.post<Ouvrier>(this.Url1, ouvrier);
+  addOuvrier(ouvrier: Ouvrier, idServices: any) {
+    return this.http.post<Ouvrier>(this.Url1 + "/" + idServices, ouvrier);
   }
   
  

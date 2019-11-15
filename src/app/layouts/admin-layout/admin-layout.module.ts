@@ -12,7 +12,7 @@ import { HomeComponent } from '../../home/home.component';
 import { UserComponent } from '../../user/user.component';
 import { TablesComponent } from '../../tables/tables.component';
 import { AjoutOuvrierComponent } from 'app/ajout-ouvrier/ajout-ouvrier.component';
-import { AjoutClientComponent } from 'app/ajout-client/ajout-client.component';
+import { AjoutServiceComponent } from 'app/ajout-service/ajout-service.component';
 
 
 
@@ -31,7 +31,7 @@ import { AjoutClientComponent } from 'app/ajout-client/ajout-client.component';
     UserComponent,
     TablesComponent,
     AjoutOuvrierComponent,
-    AjoutClientComponent
+    AjoutServiceComponent
    
   
     
