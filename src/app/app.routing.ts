@@ -4,31 +4,24 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
-const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [
-        {
-      path: '',
-      loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
-  }]},
-  {
-    path: '**',
-    redirectTo: 'dashboard'
-  }
+const routes: Routes = [
+       { path: '', component: AdminLayoutComponent,  canActivate: [AuthGuardService] ,
+        children: [ { path: 'dashboard',
+      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+      }]},
+      { path: 'login', component: LoginComponent},
+      { path: 'login', redirectTo: 'login', pathMatch: 'full'},
+      { path: 'logout', component: LogoutComponent},
 ];
-
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
+    RouterModule.forRoot(routes, {
        useHash: true
     })
   ],

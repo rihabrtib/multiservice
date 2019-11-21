@@ -1,0 +1,38 @@
+<!-- <div class="container">
+    <div>
+      User Name : <input type="text" name="username" [(ngModel)]="username">
+      Password : <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <button (click)=checkLogin() class="btn btn-success">
+      Login
+    </button>
+  </div> -->
+  <div class="container" >
+      <div class="modal-dialog login animated">
+          <div class="modal-content">
+                <div class="modal-body">
+                    <div class="box">
+                         <div class="content">
+                            <div class="division">
+                                <div class="line l"></div>
+                                <div class="logo-img">
+                                        <img src="../../assets/img/logo1.png" />
+                                    </div>
+                                <div class="line r"></div>
+                            </div>
+                            <div class="error"></div>
+                            <div class="form loginBox" >
+                                <form method="" action="" accept-charset="UTF-8">
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="username" [(ngModel)]="username">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password" [(ngModel)]="password">
+                                <input class="btn btn-default btn-login" type="button" value="Login" (click)= checkLogin() >
+                                </form>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+
+

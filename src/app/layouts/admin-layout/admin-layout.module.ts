@@ -7,12 +7,13 @@ import { LbdModule } from '../../lbd/lbd.module';
 import { NguiMapModule} from '@ngui/map';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
-
-import { HomeComponent } from '../../home/home.component';
-import { UserComponent } from '../../user/user.component';
-import { TablesComponent } from '../../tables/tables.component';
+import { HomeComponent } from 'app/home/home.component';
+import { UserComponent } from 'app/user/user.component';
+import { TablesComponent } from 'app/tables/tables.component';
 import { AjoutOuvrierComponent } from 'app/ajout-ouvrier/ajout-ouvrier.component';
 import { AjoutServiceComponent } from 'app/ajout-service/ajout-service.component';
+
+
 
 
 
@@ -27,14 +28,13 @@ import { AjoutServiceComponent } from 'app/ajout-service/ajout-service.component
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
   ],
   declarations: [
+
     HomeComponent,
     UserComponent,
     TablesComponent,
     AjoutOuvrierComponent,
     AjoutServiceComponent
-   
-  
-    
+
   ]
 })
 
