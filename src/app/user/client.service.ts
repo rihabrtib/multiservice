@@ -21,8 +21,8 @@ export class ClientService {
     return this.http.get<Client[]>('http://localhost:9000/client/allclient');
   }
 
-  deleteClient(formation: Client) {
-    return this.http.delete<Client>(this.Url + "/" + formation.id);
+  deleteClient(client: Client) {
+    return this.http.delete<Client>(this.Url + "/" + client.id);
   }
   
 }

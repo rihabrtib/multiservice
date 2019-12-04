@@ -15,6 +15,8 @@ import { AuthenticationService } from './auth/authentication.service';
 
 
 
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -31,7 +33,9 @@ import { AuthenticationService } from './auth/authentication.service';
     AdminLayoutComponent,
     LoginComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+   
+  
 
   ],
   providers: [AuthenticationService],

@@ -19,7 +19,7 @@ export class AjoutOuvrierComponent implements OnInit {
   username: new FormControl('', [Validators.required]),
   adresse: new FormControl('', [Validators.required]),
   tel: new FormControl('', [Validators.required]),
- type: new FormControl('', [Validators.required]),
+  typedouvrier: new FormControl('', [Validators.required]),
   services: new FormControl('', [Validators.required]),
 
   })

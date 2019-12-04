@@ -15,7 +15,7 @@ export class TablesComponent implements OnInit {
     messageForm = new FormGroup({
     titre: new FormControl('', [Validators.required]),
     decription: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required]),
+    date: new FormControl('', [Validators.required]),
    
   
     })

@@ -11,8 +11,10 @@ export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Ouvriers',  icon: 'pe-7s-id', class: '' },
     { path: 'user', title: 'Clients',  icon:'pe-7s-users', class: '' },
     { path: 'table', title: 'Services',  icon:'pe-7s-menu', class: '' },
+    { path: 'reservation', title: 'Reservation Service',  icon: 'pe-7s-id', class: '' },
     { path: 'ajououvrier', title: 'Ajouter Ouvrier',  icon: 'pe-7s-add-user', class: '' },
     { path: 'ajouservice', title: 'Ajouter Service',  icon: 'pe-7s-plus', class: '' },
+
 ];
 @Component({
   selector: 'app-sidebar',

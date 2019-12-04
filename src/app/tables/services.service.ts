@@ -6,7 +6,7 @@ export class Services {
     public id: number,
     public  titre:string,
     public decription:string,
-    public price :string ,
+    public date :Date ,
 
   ) { }
 }
@@ -20,11 +20,11 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
 
-  Url = 'http://localhost:9000/ouvrier/deleteouvrier';
+  Url = 'http://localhost:9000/service/deleteservices';
 
 
   getService() {
-    return this.http.get<Services[]>('http://localhost:9000/service/allservices');
+    return this.http.get<Services[]>('http://localhost:9000/service/allservice');
   }
 
   deleteService(service: Services) {

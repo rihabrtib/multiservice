@@ -19,10 +19,10 @@ export class Ouvrier {
 })
 export class OuvrierService {
 
+  constructor(private http: HttpClient) { }
+
 
   Url = 'http://localhost:9000/ouvrier/deleteouvrier';
-
-  constructor(private http: HttpClient) { }
 
 
   getOuvrier() {
@@ -30,7 +30,7 @@ export class OuvrierService {
   }
 
   deleteOuvrier(ouvrier: Ouvrier) {
-    return this.http.delete<Ouvrier>(this.Url + '/' + ouvrier.id);
+    return this.http.delete<Ouvrier>(this.Url + "/" + ouvrier.id);
   }
 
 }

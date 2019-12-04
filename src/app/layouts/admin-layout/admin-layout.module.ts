@@ -8,6 +8,7 @@ import { NguiMapModule} from '@ngui/map';
 
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { HomeComponent } from 'app/home/home.component';
+import { ReserserviceComponent } from 'app/reserservice/reserservice.component';
 import { UserComponent } from 'app/user/user.component';
 import { TablesComponent } from 'app/tables/tables.component';
 import { AjoutOuvrierComponent } from 'app/ajout-ouvrier/ajout-ouvrier.component';
@@ -33,7 +34,8 @@ import { AjoutServiceComponent } from 'app/ajout-service/ajout-service.component
     UserComponent,
     TablesComponent,
     AjoutOuvrierComponent,
-    AjoutServiceComponent
+    AjoutServiceComponent,
+    ReserserviceComponent,
 
   ]
 })

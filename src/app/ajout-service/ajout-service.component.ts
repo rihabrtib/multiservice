@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ClientService, Client } from './client.service';
+import {ServiceService, Service } from './service.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
@@ -9,16 +9,14 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class AjoutServiceComponent implements OnInit {
 
-  constructor(private service: ClientService) { }
+  constructor(private service: ServiceService) { }
   submitted = false;
   success = false;
-  client: any;
-  clients: Client[];
+  services: Service[];
   messageForm = new FormGroup({
-  username: new FormControl('', [Validators.required]),
-  Adresse: new FormControl('', [Validators.required]),
-  tel: new FormControl('', [Validators.required]),
-  Service: new FormControl('', [Validators.required]),
+  titre: new FormControl('', [Validators.required]),
+  decription: new FormControl('', [Validators.required]),
+  
 
   })
 
