@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 
   })
  
-  constructor(private service: OuvrierService,) { }
+  constructor(private service: OuvrierService) { }
 
   ngOnInit() {
   

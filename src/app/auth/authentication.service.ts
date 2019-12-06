@@ -46,13 +46,13 @@ logOut() {
 sessionStorage.removeItem('email')
 sessionStorage.removeItem('token')
 }
- GetUser() {
-   const jwt = sessionStorage.getItem('token');
-   console.log(jwt)
-  let jwtData , [] = jwt.split('.');
-  console.log(jwtData)
-  const decodedJwtJsonData = window.atob(jwtData);
-  console.log(decodedJwtJsonData)
-   sessionStorage.setItem('decoded', decodedJwtJsonData);
- }
+//  GetUser() {
+//    const jwt = sessionStorage.getItem('token');
+//    console.log(jwt)
+//   let jwtData , [] = jwt.split('.');
+//   console.log(jwtData)
+//   const decodedJwtJsonData = window.atob(jwtData);
+//   console.log(decodedJwtJsonData)
+//    sessionStorage.setItem('decoded', decodedJwtJsonData);
+//  }
 }

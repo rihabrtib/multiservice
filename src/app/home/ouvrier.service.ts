@@ -28,6 +28,7 @@ export class OuvrierService {
   getOuvrier() {
     return this.http.get<Ouvrier[]>('http://localhost:9000/ouvrier/allouvrier');
   }
+  
 
   deleteOuvrier(ouvrier: Ouvrier) {
     return this.http.delete<Ouvrier>(this.Url + "/" + ouvrier.id);

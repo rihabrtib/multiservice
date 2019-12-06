@@ -3,7 +3,7 @@
   
     <div class="container-fluid" >
         <div class="row">
-            <div class="col-sm-8 offset-1">
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="header">
                         <p style="color: cornflowerblue; font-size: 27px;" class="category">Liste de service</p>
@@ -27,23 +27,23 @@
                                     </thead>
                                     <tbody >
                                       <tr *ngFor="let service of services ; let i = index" >
-                                        <td> {{service.idservice}}</td>
-                                        <td>{{service.type_service}}</td>
-                                        <td>{{service.date_debut}}</td>
-                                        <td>{{service.etat_service}}</td>
-                                        <td>{{service.id_client}}</td>
-                                        <td>{{service.Nom}}</td>
+                                        <td> {{service.services.id}}</td>
+                                        <td>{{service.services.titre}}</td>
+                                        <td>{{service.services.date}}</td>
+                                        <td>{{service.services.Etat}}</td>
+                                        <td>{{service.id}}</td>
+                                        <td>{{service.username}}</td>
                                         <td>{{service.tel}}</td>
                                         <td> 
-                                          <select [ngModel]="selectedValue" (change)="onChange($event)">
+                                          <select [ngModel]="selectedValue" (change)="onChange($event)" id="select">
                                             <option value="" [selected]=true [disabled]=true></option>
-                                            <option [value]="ouvrier.Nom" *ngFor="let ouvrier of ouvriers">{{ouvrier.Nom}}</option>
+                                            <option [value]="ouvrier.id" *ngFor="let ouvrier of ouvriers">{{ouvrier.username}}</option>
                                           </select> 
                                         </td>
                                         <td>
                                             <button  type="button" rel="tooltip" name="valider" 
                                                 class="btn btn-success btn-simple btn-xs" 
-                                                [disabled] = "service.etat_service === 'finis' || service.etat_service === 'encours' || !buttonDisabled" (click)=onbegin(i);ChekToken() >valider</button>
+                                                [disabled] = "service.etat_service === 'finis' || service.etat_service === 'encours' || !buttonDisabled" (click)=onbegin(i);set(ouvriers[i].id) >valider</button>
                                             <button type="button" rel="tooltip" name="terminer" 
                                                 class="btn btn-danger btn-simple btn-xs" 
                                                 [disabled]= "service.etat_service === 'initial' || service.etat_service === 'finis'" (click)=onfinis(i)>terminer</button>

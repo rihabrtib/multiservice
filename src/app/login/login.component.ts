@@ -25,13 +25,9 @@ export class LoginComponent implements OnInit {
       data => {
         this.router.navigate([''])
         this.invalidLogin = false
-       // this.loginservice.GetUser();
       },
       error => {
         this.invalidLogin = true
       }));
-  }
-   getUser() {
-    (this.loginservice.GetUser());
   }
 }
