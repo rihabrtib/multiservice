@@ -12,7 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthenticationService } from './auth/authentication.service';
-
+import { NguiMapModule} from '@ngui/map';
 
 
 
@@ -26,7 +26,8 @@ import { AuthenticationService } from './auth/authentication.service';
     NavbarModule,
     ReactiveFormsModule,
     SidebarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NguiMapModule
   ],
   declarations: [
     AppComponent,

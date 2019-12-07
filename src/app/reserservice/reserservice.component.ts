@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
+import { ServiiceService, Serviice } from './serviice.service';
+//import { ClientService, Client } from '../user/client.service';
+import { OuvrierService, Ouvrier } from '../home/ouvrier.service';
 import * as jwt_decode from 'jwt-decode';
 
 
@@ -10,77 +13,50 @@ import * as jwt_decode from 'jwt-decode';
   styleUrls: ['./reserservice.component.scss']
 })
 export class ReserserviceComponent implements OnInit {
-  message: any ;
 
-
- services = [
-{
-  idservice: '1',
-  type_service: 'electricite',
-  date_debut: '20-11-2019',
-  id_client: '10',
-  Nom: 'Hatem',
-  tel: '24512228',
-  etat_service: 'initial',
-},
-{
-  idservice: '2',
-  type_service: 'chaufage',
-  date_debut: '22-11-2019',
-  id_client: '10',
-  Nom: 'Hamza',
-  tel: '24512228',
-  etat_service: 'encours',
-
-},
-{
-  idservice: '3',
-  type_service: 'blomberie',
-  date_debut: '22-11-2019',
-  id_client: '11',
-  Nom: 'Ramzi',
-  tel: '24512228',
-  etat_service: 'finis',
-},
-]
-
-public ouvriers = [{Nom: 'Ahmed'}, {Nom: 'foued'}, {Nom: 'nabil'}, {Nom: 'mohamed'}, {Nom: 'Ali'}]
-
-buttonDisabled: boolean
+  submitted = false;
+  success = false;
+  servicees: any;
+  servicess: Serviice[];
+  ouvrier:any;
+  ouvriers:Ouvrier[];
+  buttonDisabled: boolean
 Activate: boolean
 selectedValue: String
-  Option: ( defaultSelected?: false) => HTMLOptionElement
-  token: any;
 
-  constructor() { }
+ 
+ constructor(private serviceouvrier: OuvrierService,private service: ServiiceService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  
 
-  onChange(event) {
-    if(Option) {
-       this.buttonDisabled = true
-     } else {
-      this.buttonDisabled = false
+      this.service.getService().subscribe(data => {
+        this.servicess = data;
+        this.serviceouvrier.getOuvrier().subscribe(data => {
+          this.ouvriers = data;
+        })
+      })
+  
     }
-     return this.buttonDisabled;
+  
+    Delete(serv) {
+      this.service.deleteService(serv)
+        .subscribe(data => {
+          this.servicess = this.servicess.filter(p => p !== serv);
+          alert(" voulez vous supprimer ?");
+        })
+     
     }
-    onbegin(index: number) {
-   this.services[index].etat_service = 'encours'
-   this.buttonDisabled = false
-   this.Activate = true
-}
-ChekToken() {
-  this.token = jwt_decode(sessionStorage.getItem('token'));
-  console.log(this.token);
-  const Data =  this.token.sub;
-   console.log(Data);
-
-   var messages =Data.substring(0, Data.length).split("User");
-   console.log(messages[1])     
-}
-    onfinis(index: number){
-  this.services[index].etat_service = 'finis'
-  this.buttonDisabled = false
+   
+    onChange(event) {
+      if(Option) {
+         this.buttonDisabled = true
+       } else {
+        this.buttonDisabled = false
+      }
+       return this.buttonDisabled;
+      }
+      
+     
 }
 
-}
