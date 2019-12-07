@@ -29,9 +29,13 @@ export class OuvrierService {
   getOuvrier() {
     return this.http.get<Ouvrier[]>('http://localhost:9000/ouvrier/allouvrier');
   }
+<<<<<<< HEAD
   getOuvrierAvailable() {
     return this.http.get<Ouvrier[]>(this.url1);
   }
+=======
+  
+>>>>>>> d39c73d9000ca4dd3f2e5b6aa3fb7b95631fa5e1
 
   deleteOuvrier(ouvrier: Ouvrier) {
     return this.http.delete<Ouvrier>(this.Url + "/" + ouvrier.id);
