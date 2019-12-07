@@ -20,21 +20,19 @@ export class ReserserviceComponent implements OnInit {
 
 
 
-//public ouvriers = [{Nom: 'Ahmed'}, {Nom: 'foued'}, {Nom: 'nabil'}, {Nom: 'mohamed'}, {Nom: 'Ali'}]
+// public ouvriers = [{Nom: 'Ahmed'}, {Nom: 'foued'}, {Nom: 'nabil'}, {Nom: 'mohamed'}, {Nom: 'Ali'}]
 
 
 
-  buttonDisabled: boolean
+  buttonDisabled: boolean [] = [];
   Activate: boolean
   selectedValue: String
-  Option: ( defaultSelected?: false) => HTMLOptionElement
- 
-
-
+  Option: ( defaultSelected?: false ) => HTMLOptionElement
   token: any;
   value: number;
+  text: string;
 
-  constructor(private service: ReserserviceService) { }
+  constructor(private service: ReserserviceService) {}
 
   ngOnInit() {
   this.listOuvrier();
@@ -42,7 +40,7 @@ export class ReserserviceComponent implements OnInit {
   }
 listOuvrier() {
   this.service.getOuvrier().subscribe(data => {
-    this.ouvriers = data;
+  this.ouvriers = data;
   })
 }
 listeClient() {
@@ -57,23 +55,25 @@ listeClient() {
     this.ouvriers = res ;
     })
 }
-  onChange(event) {
-    if (Option) {
-       this.buttonDisabled = true
-     } else {
-      this.buttonDisabled = false
+   onChange(index: number) {
+    const e = document.getElementById('select');
+    this.text = e.options[e.selectedIndex].text;
+    if (Option && this.text !== '') {
+     this.buttonDisabled[index] = true
+    } else {
+      this.buttonDisabled[index] = false
     }
-     return this.buttonDisabled;
-    }
+     return this.buttonDisabled[index];
+     }
   onbegin(index: number) {
    this.services[index].etat_service = 'encours'
    this.ouvriers[index].available = false;
-   this.buttonDisabled = false
+   this.buttonDisabled[index] = false
    this.Activate = true
 }
-  onfinis(index: number){
+  onfinis(index: number) {
   this.services[index].etat_service = 'finis'
-  this.buttonDisabled = false
+  this.buttonDisabled[index] = false
 }
 
 }

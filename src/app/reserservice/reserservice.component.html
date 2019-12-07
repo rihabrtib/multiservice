@@ -35,15 +35,15 @@
                                         <td>{{service.username}}</td>
                                         <td>{{service.tel}}</td>
                                         <td> 
-                                          <select [ngModel]="selectedValue" (change)="onChange($event)" id="select">
-                                            <option value="" [selected]=true [disabled]=true></option>
-                                            <option [value]="ouvrier.id" *ngFor="let ouvrier of ouvriers">{{ouvrier.username}}</option>
+                                          <select [ngModel]="selectedValue" (change)="onChange(i)" id="select">
+                                            <option value="" [selected]=true ></option>
+                                            <option [value]="ouvrier.id" *ngFor="let ouvrier of ouvriers ">{{ouvrier.username}}</option>
                                           </select> 
                                         </td>
                                         <td>
                                             <button  type="button" rel="tooltip" name="valider" 
                                                 class="btn btn-success btn-simple btn-xs" 
-                                                [disabled] = "service.etat_service === 'finis' || service.etat_service === 'encours' || !buttonDisabled" (click)=onbegin(i);set(ouvriers[i].id) >valider</button>
+                                                [disabled] = "service.etat_service === 'finis' || service.etat_service === 'encours' || !buttonDisabled[i]" (click)=onbegin(i);set(ouvriers[i].id) >valider</button>
                                             <button type="button" rel="tooltip" name="terminer" 
                                                 class="btn btn-danger btn-simple btn-xs" 
                                                 [disabled]= "service.etat_service === 'initial' || service.etat_service === 'finis'" (click)=onfinis(i)>terminer</button>
