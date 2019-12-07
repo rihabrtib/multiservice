@@ -12,13 +12,7 @@ export class TablesComponent implements OnInit {
     success = false;
     services: any;
     servicess: Services[];
-    messageForm = new FormGroup({
-    titre: new FormControl('', [Validators.required]),
-    decription: new FormControl('', [Validators.required]),
-    date: new FormControl('', [Validators.required]),
-   
-  
-    })
+    
    
    constructor(private servicee: ServicesService) { }
   

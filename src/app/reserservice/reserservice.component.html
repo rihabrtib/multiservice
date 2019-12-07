@@ -3,7 +3,11 @@
   
     <div class="container-fluid" >
         <div class="row">
+<<<<<<< HEAD
+            <div class="col-md-12 ">
+=======
             <div class="col-sm-12">
+>>>>>>> d39c73d9000ca4dd3f2e5b6aa3fb7b95631fa5e1
                 <div class="card">
                     <div class="header">
                         <p style="color: cornflowerblue; font-size: 27px;" class="category">Liste de service</p>
@@ -13,19 +17,39 @@
                             <table class="table table-hover">
                                     <thead>
                                       <tr>
-                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left">id</th>
+                                        
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left" >type</th>
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" >date debut</th>
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left" >etat</th>  
-                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left" >id Client</th>   
-                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left" >Nom </th>
+                                          
+                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;" class="td-actions text-left" >Nom Du Client</th>
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" >tel</th>
+                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" ></th>
+                                        <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" ></th>
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" >ouvrier</th>
                                         <th style="color: rgb(100, 206, 156);font-size: 14px;font-weight: bold;"  class="td-actions text-left" >Action</th>
   
                                       </tr>
                                     </thead>
                                     <tbody >
+<<<<<<< HEAD
+                                      <tr *ngFor="let servicees of servicess" >
+                                        <td>{{servicees.titre}}</td>
+                                        <td>{{servicees.description}}</td>
+                                        <td>{{servicees.description}}</td>
+                                        <td>{{servicees.client.username}}</td>
+                                        <td>{{servicees.client.tel}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td> 
+                                          
+                                
+                                            <select [ngModel]="selectedValue" (change)="onChange($event)" id="select">
+                                              <option value="" [selected]=true [disabled]=true></option>
+                                              <option [value]="ouvrier.Nom" *ngFor="let ouvrier of ouvriers">{{ouvrier.Nom}}</option>
+                                              <option [value]="ouvrier.id" *ngFor="let ouvrier of ouvriers">{{ouvrier.username}}</option>
+                                            </select> 
+=======
                                       <tr *ngFor="let service of services ; let i = index" >
                                         <td> {{service.services.id}}</td>
                                         <td>{{service.services.titre}}</td>
@@ -39,6 +63,7 @@
                                             <option value="" [selected]=true ></option>
                                             <option [value]="ouvrier.id" *ngFor="let ouvrier of ouvriers ">{{ouvrier.username}}</option>
                                           </select> 
+>>>>>>> d39c73d9000ca4dd3f2e5b6aa3fb7b95631fa5e1
                                         </td>
                                         <td>
                                             <button  type="button" rel="tooltip" name="valider" 

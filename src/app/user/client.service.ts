@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class Client {
 
   constructor(public id: number,
+    public username:string
   ) { }
 }
 @Injectable({
